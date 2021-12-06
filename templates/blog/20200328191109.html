@@ -11,7 +11,7 @@ Consider an array that contains only positive numbers (> 0), such as:
 </pre>
 
 <h4> Sample program to find the maximum value of an array </h4>
-Actually find the maximum value from the array. The <a href="https://perlzemi.com/blog/20080114120030.html"> List :: Util module</a> has a max function, which is not used in this example.
+Actually find the maximum value from the array. The <a href="https://perlzemi.com/blog/20080114120030.html"> List::Util module</a> has a max function, which is not used in this example.
 You can find the maximum value by preparing a variable to store the maximum value and comparing it with the elements of the array one by one.
 
 <pre>
@@ -80,8 +80,8 @@ my $array_ref = [
 my $max = 0;
 
 for my $info (@{$array_ref}) {
-  if ($max <$info-> {'age'}) {
-    $max = $info-> {'age'};
+  if ($max <$info->{'age'}) {
+    $max = $info->{'age'};
   }
 }
 

@@ -13,7 +13,7 @@ my @array2 = (1, 4, 6, 8, 9, 12);
 
 <h4> Sample program to find the median of an array </h4>
 
-Actually find the median from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module</a> has a median function, but we won't use it in this example.
+Actually find the median from the array. The <a href="https://metacpan.org/pod/Statistics::Lite"> Statistics::Lite module</a> has a median function, but we won't use it in this example.
 If the number of elements is odd, the median value is the value in the center of the element, and if the number of elements is even, the average of the two values ​​in the center can be calculated as the median value.
 * Sorted data is used to simplify the code.
 
@@ -87,7 +87,7 @@ The method of checking is the same as before.
 <pre>
 use strict;
 use warnings;
-use Data :: Dumper;
+use Data::Dumper;
 
 my $array_ref1 = [
   {name =>'bob', age => 9},
@@ -111,11 +111,11 @@ sub get_median {
     my $ret_median = 0;
 
     if ($array_cnt%2 == 1) {
-$ret_median = $array_ref-> [$median_pos]-> {'age'};
+$ret_median = $array_ref->[$median_pos]->{'age'};
     } else {
         my $median_pos2 = $median_pos ―― 1;
-        my $value1 = $array_ref-> [$median_pos]-> {'age'};
-        my $value2 = $array_ref-> [$median_pos2]-> {'age'};
+        my $value1 = $array_ref->[$median_pos]->{'age'};
+        my $value2 = $array_ref->[$median_pos2]->{'age'};
        
         $ret_median = ($value1 + $value2) / 2;
     }

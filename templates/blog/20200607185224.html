@@ -11,8 +11,8 @@ my @array = (8, 1, 4, 5, 7);
 </pre>
 
 <h4> Sample program to find the average value of an array </h4>
-Actually calculate the average value from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module</a> has a mean function, but we won't use it in this example.
-The <a href="https://metacpan.org/pod/List :: Util"> List :: Util module</a> introduced so far does not have a function to calculate the average value.
+Actually calculate the average value from the array. The <a href="https://metacpan.org/pod/Statistics::Lite"> Statistics::Lite module</a> has a mean function, but we won't use it in this example.
+The <a href="https://metacpan.org/pod/List::Util"> List::Util module</a> introduced so far does not have a function to calculate the average value.
 The average value can be calculated by adding the values ​​of all the data and dividing by the number of data.
 
 <pre>
@@ -83,7 +83,7 @@ my $sum = 0;
 my $avg = 0;
 
 for my $info (@{$array_ref}) {
-    $sum + = $info-> {'age'};
+    $sum + = $info->{'age'};
     $array_cnt + = 1;
 }
 $avg = $sum / $array_cnt;

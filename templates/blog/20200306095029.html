@@ -14,19 +14,19 @@ Let's find the number of days from July 16, 2019 to December 31, 2019. This year
 use strict;
 use warnings;
 
-use Time :: Piece;
+use Time::Piece;
 
 # Date object as of July 16, 2019
-my $day1_tp = Time :: Piece-> strptime ('2019-7-16','%Y-%m-%d');
+my $day1_tp = Time::Piece->strptime('2019-7-16','%Y-%m-%d');
 
 # Date object as of December 31, 2019
-my $day2_tp = Time :: Piece-> strptime ('2019-12-31','%Y-%m-%d');
+my $day2_tp = Time::Piece->strptime('2019-12-31','%Y-%m-%d');
 
-# Find the difference. Returns a Time :: Seconds object that stores the difference information.
+# Find the difference. Returns a Time::Seconds object that stores the difference information.
 my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds-> days + 1;
+my $days = $seconds->days+ 1;
 
 print "$days\n";
 </pre>
@@ -37,11 +37,11 @@ Output result.
 169
 </pre>
 
-<a href="https://perlzemi.com/blog/20091105124627.html"> Time :: Piece</a> is a module for date and time that comes standard with Perl (Perl 5.10 or later). is.
+<a href="https://perlzemi.com/blog/20091105124627.html"> Time::Piece</a> is a module for date and time that comes standard with Perl (Perl 5.10 or later). is.
 
-You can use the strptime method to create a Time :: Piece object with a specified date and date format.
+You can use the strptime method to create a Time::Piece object with a specified date and date format.
 
-The Time :: Piece object can be subtracted and returns a Time :: Seconds object that represents the difference between the Time :: Piece objects.
+The Time::Piece object can be subtracted and returns a Time::Seconds object that represents the difference between the Time::Piece objects.
 
 Use the days method to find the date difference. Adding 1 to the date difference gives the correct number of days in a year.
 
@@ -59,19 +59,19 @@ Let's find the number of days in the year. The number of days from January 1, 20
 use strict;
 use warnings;
 
-use Time :: Piece;
+use Time::Piece;
 
 #January 1, 2019 Date Object
-my $day1_tp = Time :: Piece-> strptime ('2019-1-1','%Y-%m-%d');
+my $day1_tp = Time::Piece->strptime('2019-1-1','%Y-%m-%d');
 
 # Date object as of December 31, 2019
-my $day2_tp = Time :: Piece-> strptime ('2019-12-31','%Y-%m-%d');
+my $day2_tp = Time::Piece->strptime('2019-12-31','%Y-%m-%d');
 
-# Find the difference. Returns a Time :: Seconds object that stores the difference information.
+# Find the difference. Returns a Time::Seconds object that stores the difference information.
 my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds-> days + 1;
+my $days = $seconds->days+ 1;
 
 print "$days\n";
 </pre>
@@ -92,19 +92,19 @@ Find the number of days in a leap year. This year is a leap year. Write exactly 
 use strict;
 use warnings;
 
-use Time :: Piece;
+use Time::Piece;
 
 # Date object as of January 1, 2020
-my $day1_tp = Time :: Piece-> strptime ('2020-1-1','%Y-%m-%d');
+my $day1_tp = Time::Piece->strptime('2020-1-1','%Y-%m-%d');
 
 # Date object as of December 31, 2020
-my $day2_tp = Time :: Piece-> strptime ('2020-12-31','%Y-%m-%d');
+my $day2_tp = Time::Piece->strptime('2020-12-31','%Y-%m-%d');
 
-# Find the difference. Returns a Time :: Seconds object that stores the difference information.
+# Find the difference. Returns a Time::Seconds object that stores the difference information.
 my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds-> days + 1;
+my $days = $seconds->days+ 1;
 
 print "$days\n";
 </pre>
@@ -127,7 +127,7 @@ First, get the first day of the next month. Let's get the number of days in Febr
 use strict;
 use warnings;
 
-use Time :: Piece;
+use Time::Piece;
 
 # Year
 my $year = 2020;
@@ -138,14 +138,14 @@ my $mon = 2;
 #Next month
 my $mon_next = $mon + 1;
 
-#Time :: Piece object on the first day of the next month
-my $next_mon_tp = Time :: Piece-> strptime ("$year- $mon_next-1",'%Y-%m-%d');
+#Time::Piece object on the first day of the next month
+my $next_mon_tp = Time::Piece->strptime("$year- $mon_next-1",'%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
 my $this_mon_last_tp = $next_mon_tp --1;
 
 # Get the last day. This is the same value as the number of months.
-my $this_mon_days_count = $this_mon_last_tp-> mday;
+my $this_mon_days_count = $this_mon_last_tp->mday;
 
 print "$this_mon_days_count\n";
 </pre>
@@ -174,7 +174,7 @@ This is a program sample for finding the rent for the first month. The monthly r
 use strict;
 use warnings;
 
-use Time :: Piece;
+use Time::Piece;
 
 # rent
 my $yatin = 79_000;
@@ -191,26 +191,26 @@ my $start_mday = 18;
 #Next month
 my $mon_next = $mon + 1;
 
-#Time :: Piece object on the first day of the next month
-my $next_mon_tp = Time :: Piece-> strptime ("$year- $mon_next-1",'%Y-%m-%d');
+#Time::Piece object on the first day of the next month
+my $next_mon_tp = Time::Piece->strptime("$year- $mon_next-1",'%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
 my $this_mon_last_tp = $next_mon_tp --1;
 
 # Get the last day. This is the same value as the number of months.
-my $this_mon_days_count = $this_mon_last_tp-> mday;
+my $this_mon_days_count = $this_mon_last_tp->mday;
 
 # Date object on June 19, 2020
-my $day1_tp = Time :: Piece-> strptime ("2020-6- $start_mday",'%Y-%m-%d');
+my $day1_tp = Time::Piece->strptime("2020-6- $start_mday",'%Y-%m-%d');
 
 # Date object as of December 31, 2020
-my $day2_tp = Time :: Piece-> strptime ("2020-6- $this_mon_days_count",'%Y-%m-%d');
+my $day2_tp = Time::Piece->strptime("2020-6- $this_mon_days_count",'%Y-%m-%d');
 
-# Find the difference. Returns a Time :: Seconds object that stores the difference information.
+# Find the difference. Returns a Time::Seconds object that stores the difference information.
 my $seconds = $day2_tp-$day1_tp;
 
 #Days
-my $days_count = $seconds-> days + 1;
+my $days_count = $seconds->days+ 1;
 
 #Daily rent
 my $hiwari_yatin = $yatin * ($days_count / $this_mon_days_count);
