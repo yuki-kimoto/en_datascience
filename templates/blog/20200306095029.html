@@ -1,12 +1,12 @@
-<h2> Perl program that performs prorated calculation </ h2>
+<h2> Perl program that performs prorated calculation </h2>
 
 I will explain how to perform daily calculation with a Perl program. In business, when you calculate money, you often do a prorated calculation. Calculate interest rates on a daily basis. When you rent a house, you pay only for the amount from the day you rent it to the end of the month.
 
-<h3> Find the number of days from the specified date to the specified date </ h3>
+<h3> Find the number of days from the specified date to the specified date </h3>
 
 Let's find the number of days from the specified date to the specified date.
 
-<h4> Number of days from July 16, 2019 to December 31, 2019 (not a leap year) </ h4>
+<h4> Number of days from July 16, 2019 to December 31, 2019 (not a leap year) </h4>
 
 Let's find the number of days from July 16, 2019 to December 31, 2019. This year is not a leap year.
 
@@ -29,15 +29,15 @@ my $ seconds = $ day2_tp-$ day1_tp;
 my $ days = $ seconds-> days + 1;
 
 print "$ days \ n";
-</ pre>
+</pre>
 
 Output result.
 
 <pre>
 169
-</ pre>
+</pre>
 
-<a href="https://perlzemi.com/blog/20091105124627.html"> Time :: Piece </a> is a module for date and time that comes standard with Perl (Perl 5.10 or later). is.
+<a href="https://perlzemi.com/blog/20091105124627.html"> Time :: Piece</a> is a module for date and time that comes standard with Perl (Perl 5.10 or later). is.
 
 You can use the strptime method to create a Time :: Piece object with a specified date and date format.
 
@@ -47,11 +47,11 @@ Use the days method to find the date difference. Adding 1 to the date difference
 
 First of all, with this, we were able to calculate the number of days in a year when calculating with the number of days in a year as the denominator.
 
-<h3> Find the number of days in a year </ h3>
+<h3> Find the number of days in a year </h3>
 
 Let's find the number of days in the year.
 
-<h4> Find the number of days in a year (not a leap year) </ h4>
+<h4> Find the number of days in a year (not a leap year) </h4>
 
 Let's find the number of days in the year. The number of days from January 1, 2019 to December 31, 2019. This year is not a leap year.
 
@@ -74,17 +74,17 @@ my $ seconds = $ day2_tp-$ day1_tp;
 my $ days = $ seconds-> days + 1;
 
 print "$ days \ n";
-</ pre>
+</pre>
 
 Output result.
 
 <pre>
 365
-</ pre>
+</pre>
 
 The number of days in the year was output.
 
-<h4> Find the number of days in a year (in a leap year) </ h4>
+<h4> Find the number of days in a year (in a leap year) </h4>
 
 Find the number of days in a leap year. This year is a leap year. Write exactly the same process as above, changing only the year.
 
@@ -107,17 +107,17 @@ my $ seconds = $ day2_tp-$ day1_tp;
 my $ days = $ seconds-> days + 1;
 
 print "$ days \ n";
-</ pre>
+</pre>
 
 Output result.
 
 <pre>
 366
-</ pre>
+</pre>
 
 Even in leap years, the number of days is correct.
 
-<h4> Find the number of days in a month </ h4>
+<h4> Find the number of days in a month </h4>
 
 The date always starts on the 1st, but the end may be the 31st, 30th, 29th, or 28th. To ask for it automatically in such cases, do the following:
 
@@ -148,25 +148,25 @@ my $ this_mon_last_tp = $ next_mon_tp --1;
 my $ this_mon_days_count = $ this_mon_last_tp-> mday;
 
 print "$ this_mon_days_count \ n";
-</ pre>
+</pre>
 
 Output result.
 
 <pre>
 29
-</ pre>
+</pre>
 
 It's the number of days in February of a leap year.
 
-<h3> It's OK if you know the number of days in the year, the number of days in the month, and the number of days from one day to another </ h3>
+<h3> It's OK if you know the number of days in the year, the number of days in the month, and the number of days from one day to another </h3>
 
 If you know the number of days in a year, the number of days in a month, and the number of days from one day to another, you can calculate on a daily basis.
 
 <pre>
 Daily amount = amount * (days / year or month)
-</ pre>
+</pre>
 
-<h4> Program sample for finding rent for the first month </ h4>
+<h4> Program sample for finding rent for the first month </h4>
 
 This is a program sample for finding the rent for the first month. The monthly rent is 79,000 yen, and the rent for the first month when delivered on June 18, 2020.
 
@@ -219,16 +219,16 @@ my $ hiwari_yatin = $ yatin * ($ days_count / $ this_mon_days_count);
 my $ hiwari_yatin_cut = int $ hiwari_yatin;
 
 print "$ hiwari_yatin_cut \ n";
-</ pre>
+</pre>
 
 Output result.
 
 <pre>
 34233
-</ pre>
+</pre>
 
 The rent for the first month was "34,233 yen".
 
-After doing the prorated calculation, <a href="/blog/20200305122658.html"> decimal point is truncated </a> at the end.
+After doing the prorated calculation, <a href="/blog/20200305122658.html"> decimal point is truncated</a> at the end.
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo</a>.

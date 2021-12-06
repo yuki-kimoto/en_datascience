@@ -1,18 +1,18 @@
-<h2> Let's find the average value </ h2>
+<h2> Let's find the average value </h2>
 
 I will explain how to calculate the average value using a Perl program.
 
-Let's find the average value of the <h3> array. </ h3>
+Let's find the average value of the <h3> array. </h3>
 
 Consider the following array.
 
 <pre>
 my @array = (8, 1, 4, 5, 7);
-</ pre>
+</pre>
 
-<h4> Sample program to find the average value of an array </ h4>
-Actually calculate the average value from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module </a> has a mean function, but we won't use it in this example.
-The <a href="https://metacpan.org/pod/List :: Util"> List :: Util module </a> introduced so far does not have a function to calculate the average value.
+<h4> Sample program to find the average value of an array </h4>
+Actually calculate the average value from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module</a> has a mean function, but we won't use it in this example.
+The <a href="https://metacpan.org/pod/List :: Util"> List :: Util module</a> introduced so far does not have a function to calculate the average value.
 The average value can be calculated by adding the values ​​of all the data and dividing by the number of data.
 
 <pre>
@@ -31,29 +31,29 @@ for my $ num (@array) {
 $ avg = $ sum / $ array_cnt;
 
 print "$ avg \ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 Five
-</ pre>
+</pre>
 
 All the data are added one by one, and finally divided by the number of data.
 If the data for which the average value is to be calculated is an array, the number of data (number of elements) can be obtained by using "@array name".
 
-<h3> Let's find the average value of a specific column from the tabular data. </ h3>
+<h3> Let's find the average value of a specific column from the tabular data. </h3>
 
 Consider the following data.
 <table>
   <thead>
-    <tr> <th> name </ th> <th> age </ th> </ tr>
+    <tr> <th> name </th> <th> age </th> </tr>
   </thead>
   <tbody>
-    <tr> <th> bob </ th> <th> 9 </ th> </ tr>
-    <tr> <th> tom </ th> <th> 13 </ th> </ tr>
-    <tr> <th> alice </ th> <th> 11 </ th> </ tr>
-  </ tbody>
-</ table>
+    <tr> <th> bob </th> <th> 9 </th> </tr>
+    <tr> <th> tom </th> <th> 13 </th> </tr>
+    <tr> <th> alice </th> <th> 11 </th> </tr>
+  </tbody>
+</table>
 
 It is as follows when expressed by the reference of the array and the hash.
 <pre>
@@ -62,9 +62,9 @@ $ array_ref = [
   {name =>'tom', age => 13},
   {name =>'alice', age => 11}
 ];;
-</ pre>
+</pre>
 
-<h4> Sample program to calculate the average value of the age column </ h4>
+<h4> Sample program to calculate the average value of the age column </h4>
 Data access has become a little more difficult due to the complexity of the referenced data,
 The method of checking is the same as before.
 
@@ -89,18 +89,18 @@ for my $ info (@ {$ array_ref}) {
 $ avg = $ sum / $ array_cnt;
 
 print "$ avg \ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 11 11
-</ pre>
+</pre>
 
 The process is the same as before except that the reference is dealt with.
 The number of data is calculated by counting the amount of data added.
 Since this is an array reference, the number of data can be dereferenced and calculated as follows.
 <pre>
 my $ array_cnt = @ {$ array_cnt};
-</ pre>
+</pre>
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo</a>.

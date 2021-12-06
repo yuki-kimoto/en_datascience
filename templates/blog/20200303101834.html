@@ -1,18 +1,18 @@
-<h2> Perl program for rounding down less than 1000 yen </ h2>
+<h2> Perl program for rounding down less than 1000 yen </h2>
 
 Let's create a Perl program that rounds down less than 1000 yen. This is useful when you want to cut off the standard taxable amount of less than 1000 yen before multiplying by the tax rate.
 
 Suppose the first amount given is "198,223 yen". Let's round down less than 1000 yen to "198,000 yen".
 
-<h3> How to truncate less than 1000 yen? </ H3>
+<h3> How to truncate less than 1000 yen? </H3>
 
 The process of truncating less than 1000 yen is considered as follows.
 
 <ol>
-  <li> Divide by 1000 </ li>
-  <li> Truncate the decimals </ li>
-  <li> Multiply by 1000 </ li>
-</ ol>
+  <li> Divide by 1000 </li>
+  <li> Truncate the decimals </li>
+  <li> Multiply by 1000 </li>
+</ol>
 
 <pre>
 use strict;
@@ -32,8 +32,8 @@ my $ price_cut = $ price_div_cut * 1000;
 
 # Output result
 print "$ price_cut \ n";
-</ pre>
+</pre>
 
-<a href="https://perlzemi.com/blog/20080910122105.html"> Four arithmetic operations </a> and extracting the integer part <a href="https://perlzemi.com/blog/20080923122214.html" I am using the> int function </a>.
+<a href="https://perlzemi.com/blog/20080910122105.html"> Four arithmetic operations</a> and extracting the integer part <a href="https://perlzemi.com/blog/20080923122214.html" I am using the> int function</a>.
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo</a>.

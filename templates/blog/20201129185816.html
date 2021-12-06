@@ -1,19 +1,19 @@
-<h2> Let's make a bar graph with gnuplot </ h2>
+<h2> Let's make a bar graph with gnuplot </h2>
 
 Create a bar graph using gnuplot and save it as an image file. The goal is to create the graph below.
 
 <img src = "/ images / chart / 20201129185816_1.png" />
 
-<h3> Install gnuplot </ h3>
+<h3> Install gnuplot </h3>
 You can easily install it on your Mac using Homebrew.
 
 <pre>
 $ brew install gnuplot
-</ pre>
+</pre>
 
-<h3> Create a bar graph </ h3>
+<h3> Create a bar graph </h3>
 
-<h4> Prepare the data </ ​​h4>
+<h4> Prepare the data </​​h4>
 I saved it with the file name sample-box.dat.
 <pre>
 1 "2016" 9500
@@ -21,9 +21,9 @@ I saved it with the file name sample-box.dat.
 3 "2018" 11800
 4 "2019" 12100
 5 "2020" 16600
-</ pre>
+</pre>
 
-<h4> Display graph </ h4>
+<h4> Display graph </h4>
 Start gnuplot and display the graph.
 If sample-box.dat is not in the current directory, specify the file path.
 
@@ -44,12 +44,12 @@ Terminal type is now'qt'
 gnuplot>
 gnuplot> plot'sample-box.dat' using 1: 3: xtic (2) with boxes
 gnuplot>
-</ pre>
+</pre>
 
 Did you see a bar chart?
 I think that the x-axis is displayed from "2016" to "2020", and the y-axis is the value in the third column of sample-box.dat to create a bar graph.
 
-<h4> Save as an image </ h4>
+<h4> Save as an image </h4>
 
 Specify the output destination with set terminal and set output and plot.
 
@@ -62,13 +62,13 @@ gnuplot> set output'test-boxes.png'
 gnuplot>
 gnuplot> plot'sample-box.dat' using 1: 3: xtic (2) with boxes
 gnuplot>
-</ pre>
+</pre>
 
 Was the graph saved as a test-boxes.png file?
 Select a font that can display Japanese in your environment.
 
 
-<h4> Simplify the output of bar graphs </ h4>
+<h4> Simplify the output of bar graphs </h4>
 Save the following file as png_plot-boxes.txt.
 I also tried to specify the format of the graph.
 
@@ -85,17 +85,17 @@ set format "%'.0f"
 set decimalsign locale; set decimalsign "."
 
 plot [] [0:]'sample-box.dat' using 1: 3: xtic (2) with boxes
-</ pre>
+</pre>
 
 You can execute the commands in the file all at once by executing the following.
 <pre>
 $ gnuplot png_plot-boxes.txt
-</ pre>
+</pre>
 
 You can get the same result by starting gnuplot and using the load command.
 <pre>
 gnuplot> load'png_plot-boxes.txt'
-</ pre>
+</pre>
 
 The following image is saved.
 

@@ -1,10 +1,10 @@
-<h2> Let's find the maximum, minimum, and average values ​​with SQL </ h2>
+<h2> Let's find the maximum, minimum, and average values ​​with SQL </h2>
 
 Let's find the maximum, minimum, and average values ​​in SQL. I create a table, insert data, and find the maximum, minimum, and average values ​​in SQL.
 
-<h3> Create database </ h3>
+<h3> Create database </h3>
 
-If you don't have a database, <a href="https://en.mariadb.perlzemi.com/blog/20200521082643.html"> create a database with the create database statement </a>.
+If you don't have a database, <a href="https://en.mariadb.perlzemi.com/blog/20200521082643.html"> create a database with the create database statement</a>.
 
 <pre>
 MariaDB [none]> create database kimotosystem;
@@ -18,11 +18,11 @@ MariaDB [kimotosystem]> show tables;
 | book |
 + ----------------- +
 1 row in set (0.01 sec)
-</ pre>
+</pre>
 
-<h3> Create table </ h3>
+<h3> Create table </h3>
 
-<a href="https://en.mariadb.perlzemi.com/blog/20200218150054.html"> Create a table using the create table statement </a>. The table name is book. ID, title and price data.
+<a href="https://en.mariadb.perlzemi.com/blog/20200218150054.html"> Create a table using the create table statement</a>. The table name is book. ID, title and price data.
 
 <pre>
 MariaDB [kimotosystem]>
@@ -39,9 +39,9 @@ id | int (11) | NO | PRI | NULL | auto_increment |
 | price | int (11) | YES | | NULL | |
 + ------- + ------------- + ------ + ------- + --------- + ---- ------------+
 3 rows in set (0.00 sec)
-</ pre>
+</pre>
 
-<h3> Insert data </ ​​h3>
+<h3> Insert data </​​h3>
 
 Insert book data using the SQL insert statement.
 
@@ -63,9 +63,9 @@ MariaDB [kimotosystem]> select * from kimotosystem.book;
 | 7 | book G | 4000 |
 + ---- + -------- + ------- +
 7 rows in set (0.01 sec)
-</ pre>
+</pre>
 
-<h3> Find the maximum, minimum, and average values ​​with SQL </ h3>
+<h3> Find the maximum, minimum, and average values ​​with SQL </h3>
 
 Use the select statement and set operation to find the maximum, minimum, and average values.
 
@@ -77,4 +77,4 @@ MariaDB [kimotosystem]> select max (price), min (price), avg (price) from kimoto
 4000 | 800 | 2300.0000 |
 + ------------ + ------------ + ------------ +
 1 row in set (0.00 sec)
-</ pre>
+</pre>

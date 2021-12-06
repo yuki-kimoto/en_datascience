@@ -1,17 +1,17 @@
-<h2> Let's find the maximum value </ h2>
+<h2> Let's find the maximum value </h2>
 
 I will explain how to find the maximum value using a Perl program.
 
-Let's find the maximum value of the <h3> array. </ h3>
+Let's find the maximum value of the <h3> array. </h3>
 
 Consider an array that contains only positive numbers (> 0), such as:
 
 <pre>
 @array = (1, 8, 3, 5, 7);
-</ pre>
+</pre>
 
-<h4> Sample program to find the maximum value of an array </ h4>
-Actually find the maximum value from the array. The <a href="https://perlzemi.com/blog/20080114120030.html"> List :: Util module </a> has a max function, which is not used in this example.
+<h4> Sample program to find the maximum value of an array </h4>
+Actually find the maximum value from the array. The <a href="https://perlzemi.com/blog/20080114120030.html"> List :: Util module</a> has a max function, which is not used in this example.
 You can find the maximum value by preparing a variable to store the maximum value and comparing it with the elements of the array one by one.
 
 <pre>
@@ -29,30 +29,30 @@ for my $ num (@array) {
 }
 
 print "$ max \ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 8
-</ pre>
+</pre>
 
 I think that the process is very easy to understand by comparing each one.
 * To simplify the code, we will handle an array that contains only positive numbers (> 0).
 
 
-<h3> Let's find the maximum value of a specific column from the tabular data. </ h3>
+<h3> Let's find the maximum value of a specific column from the tabular data. </h3>
 
 Consider the following data.
 <table>
   <thead>
-    <tr> <th> name </ th> <th> age </ th> </ tr>
+    <tr> <th> name </th> <th> age </th> </tr>
   </thead>
   <tbody>
-    <tr> <th> bob </ th> <th> 9 </ th> </ tr>
-    <tr> <th> tom </ th> <th> 14 </ th> </ tr>
-    <tr> <th> alice </ th> <th> 11 </ th> </ tr>
-  </ tbody>
-</ table>
+    <tr> <th> bob </th> <th> 9 </th> </tr>
+    <tr> <th> tom </th> <th> 14 </th> </tr>
+    <tr> <th> alice </th> <th> 11 </th> </tr>
+  </tbody>
+</table>
 
 It is as follows when expressed by the reference of the array and the hash.
 <pre>
@@ -61,9 +61,9 @@ $ array_ref = [
   {name =>'tom', age => 14},
   {name =>'alice', age => 11}
 ];;
-</ pre>
+</pre>
 
-<h4> Sample program to find the maximum value of the age column </ h4>
+<h4> Sample program to find the maximum value of the age column </h4>
 Data access has become a little more difficult due to the complexity of the referenced data,
 The method of checking is the same as before.
 
@@ -86,13 +86,13 @@ for my $ info (@ {$ array_ref}) {
 }
 
 print "$ max \ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 14
-</ pre>
+</pre>
 
 The process is the same as before except that the reference is dealt with.
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo</a>.

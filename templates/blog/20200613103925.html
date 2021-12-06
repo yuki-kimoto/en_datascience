@@ -1,19 +1,19 @@
-<h2> Let's find the median </ h2>
+<h2> Let's find the median </h2>
 
 I will explain how to find the median using a Perl program.
 
-<h3> Let's find the median of the array </ h3>
+<h3> Let's find the median of the array </h3>
 
 Consider the following array.
 
 <pre>
 my @ array1 = (1, 4, 5, 7, 8);
 my @ array2 = (1, 4, 6, 8, 9, 12);
-</ pre>
+</pre>
 
-<h4> Sample program to find the median of an array </ h4>
+<h4> Sample program to find the median of an array </h4>
 
-Actually find the median from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module </a> has a median function, but we won't use it in this example.
+Actually find the median from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module</a> has a median function, but we won't use it in this example.
 If the number of elements is odd, the median value is the value in the center of the element, and if the number of elements is even, the average of the two values ​​in the center can be calculated as the median value.
 * Sorted data is used to simplify the code.
 
@@ -45,30 +45,30 @@ print "The median of array1 is:". "$ median". "\ n";
 
 $ median = get_median (\ @ array2);
 print "The median of array2 is:". "$ median". "\ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 The median of array1 is: 5
 The median of array2 is: 7
-</ pre>
+</pre>
 
 You can get the central element of an array of elements without having to compare values ​​like maximum, minimum, and so on.
 
 
-<h3> Let's find the median value of a specific column from the tabular data. </ h3>
+<h3> Let's find the median value of a specific column from the tabular data. </h3>
 
 Consider the following data.
 <table>
   <thead>
-    <tr> <th> name </ th> <th> age </ th> </ tr>
+    <tr> <th> name </th> <th> age </th> </tr>
   </thead>
   <tbody>
-    <tr> <th> bob </ th> <th> 9 </ th> </ tr>
-    <tr> <th> alice </ th> <th> 11 </ th> </ tr>
-    <tr> <th> tom </ th> <th> 13 </ th> </ tr>
-  </ tbody>
-</ table>
+    <tr> <th> bob </th> <th> 9 </th> </tr>
+    <tr> <th> alice </th> <th> 11 </th> </tr>
+    <tr> <th> tom </th> <th> 13 </th> </tr>
+  </tbody>
+</table>
 
 It is as follows when expressed by the reference of the array and the hash.
 <pre>
@@ -77,9 +77,9 @@ $ array_ref1 = [
   {name =>'alice', age => 11},
   {name =>'tom', age => 13}
 ];;
-</ pre>
+</pre>
 
-<h4> Sample program to find the median of the age column </ h4>
+<h4> Sample program to find the median of the age column </h4>
 Data access has become a little more difficult due to the complexity of the referenced data,
 The method of checking is the same as before.
 * $ Array_ref2 is also added to include even patterns.
@@ -127,14 +127,14 @@ print "The median of array_ref1 is:". "$ median". "\ n";
 
 $ median = get_median (\ @ $ array_ref2);
 print "The median of array_ref2 is:". "$ median". "\ n";
-</ pre>
+</pre>
 
 Execution result
 <pre>
 The median of array_ref1 is: 11
 The median of array_ref2 is: 12
-</ pre>
+</pre>
 
 The process is the same as before except that the reference is dealt with.
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo</a>.

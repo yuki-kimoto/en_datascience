@@ -1,4 +1,4 @@
-<h2> Perl program that rounds up the amount after the decimal point </ h2>
+<h2> Perl program that rounds up the amount after the decimal point </h2>
 
 Let's create a Perl program that rounds up the amount after the decimal point. It can be used for rounding when dividing the amount.
 
@@ -6,9 +6,9 @@ For example, let's assume that the total amount of money borne by the buyer / se
 
 In such a case, you can select either rounding down or rounding up after the decimal point, but this time let's consider the case of rounding up.
 
-<h3> Round up the amount after the decimal point </ h3>
+<h3> Round up the amount after the decimal point </h3>
 
-To round up the amount after the decimal point, add 1 after using the <a href="https://perlzemi.com/blog/20080923122214.html"> int function </a>.
+To round up the amount after the decimal point, add 1 after using the <a href="https://perlzemi.com/blog/20080923122214.html"> int function</a>.
 
 <pre>
 use strict;
@@ -22,11 +22,11 @@ my $ price_cut = int ($ price) + 1;
 
 # Output result
 print "$ price_cut \ n";
-</ pre>
+</pre>
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo</a>.
 
-<h3> How to round up even if the price is negative? </ H3>
+<h3> How to round up even if the price is negative? </H3>
 
 You may be using a negative price, which means a loss. In such a case, if you run the above program, it will be devaluated. "-886.027397260274" becomes "-885".
 
@@ -46,6 +46,6 @@ my $ price_cut = $ price> 0? int ($ price) + 1: int ($ price) ―― 1;
 
 # Output result
 print "$ price_cut \ n";
-</ pre>
+</pre>
 
-You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo </a>.
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com/"> PerlBanjo</a>.
