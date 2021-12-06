@@ -30,7 +30,7 @@ sub get_median {
     my $array_cnt = @$array_ref;
     my $ret_median = 0;
 
-    my $median_pos = int ($array_cnt / 2);
+    my $median_pos = int($array_cnt / 2);
     if ($array_cnt%2 == 1) {
         $ret_median = @$array_ref [$median_pos];
     } else {
@@ -107,7 +107,7 @@ my $median = 0;
 sub get_median {
     my ($array_ref) = @_;
     my $array_cnt = @$array_ref;
-    my $median_pos = int ($array_cnt / 2);
+    my $median_pos = int($array_cnt / 2);
     my $ret_median = 0;
 
     if ($array_cnt%2 == 1) {
