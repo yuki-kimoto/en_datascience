@@ -7,18 +7,18 @@ use strict;
 use warnings;
 use DBI;
 
-my $ dbh = DBI-> connect (
+my $dbh = DBI-> connect (
    "DBI: mysql: kimotosystem: localhost",
    "kimoto",
    "kimoto"
-) or die "cannot connect to MySQL: $ DBI :: errstr";
+) or die "cannot connect to MySQL: $DBI :: errstr";
 
-my $ sth = $ dbh-> prepare ("SELECT min (price), max (price), avg (price) FROM kimotosystem.book;");
-$ sth-> execute ();
+my $sth = $dbh-> prepare ("SELECT min (price), max (price), avg (price) FROM kimotosystem.book;");
+$sth-> execute ();
 
-my $ hash_ref = $ sth-> fetchrow_hashref;
-print "min = $ hash_ref-> {'min (price)'}, max = $ hash_ref-> {'max (price)'}, avg = $ hash_ref-> {'avg (price)'} \ n";
+my $hash_ref = $sth-> fetchrow_hashref;
+print "min = $hash_ref-> {'min (price)'}, max = $hash_ref-> {'max (price)'}, avg = $hash_ref-> {'avg (price)'}\n";
 
-$ sth-> finish;
-$ dbh-> disconnect;
+$sth-> finish;
+$dbh-> disconnect;
 </pre>

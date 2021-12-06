@@ -7,8 +7,8 @@ I will explain how to find the median using a Perl program.
 Consider the following array.
 
 <pre>
-my @ array1 = (1, 4, 5, 7, 8);
-my @ array2 = (1, 4, 6, 8, 9, 12);
+my @array1 = (1, 4, 5, 7, 8);
+my @array2 = (1, 4, 6, 8, 9, 12);
 </pre>
 
 <h4> Sample program to find the median of an array </h4>
@@ -21,30 +21,30 @@ If the number of elements is odd, the median value is the value in the center of
 use strict;
 use warnings;
 
-my @ array1 = (1, 4, 5, 7, 8);
-my @ array2 = (1, 4, 6, 8, 9, 12);
-my $ median = 0;
+my @array1 = (1, 4, 5, 7, 8);
+my @array2 = (1, 4, 6, 8, 9, 12);
+my $median = 0;
 
 sub get_median {
-    my ($ array_ref) = @_;
-    my $ array_cnt = @ $ array_ref;
-    my $ ret_median = 0;
+    my ($array_ref) = @_;
+    my $array_cnt = @$array_ref;
+    my $ret_median = 0;
 
-    my $ median_pos = int ($ array_cnt / 2);
-    if ($ array_cnt% 2 == 1) {
-        $ ret_median = @ $ array_ref [$ median_pos];
+    my $median_pos = int ($array_cnt / 2);
+    if ($array_cnt%2 == 1) {
+        $ret_median = @$array_ref [$median_pos];
     } else {
-        my $ median_pos2 = $ median_pos ―― 1;
-        $ ret_median = (@ $ array_ref [$ median_pos] + @ $ array_ref [$ median_pos2]) / 2;
+        my $median_pos2 = $median_pos ―― 1;
+        $ret_median = (@$array_ref [$median_pos] + @$array_ref [$median_pos2]) / 2;
     }
-return $ ret_median;
+return $ret_median;
 }
 
-$ median = get_median (\ @ array1);
-print "The median of array1 is:". "$ median". "\ n";
+$median = get_median (\ @array1);
+print "The median of array1 is:". "$median". "\ n";
 
-$ median = get_median (\ @ array2);
-print "The median of array2 is:". "$ median". "\ n";
+$median = get_median (\ @array2);
+print "The median of array2 is:". "$median". "\ n";
 </pre>
 
 Execution result
@@ -72,7 +72,7 @@ Consider the following data.
 
 It is as follows when expressed by the reference of the array and the hash.
 <pre>
-$ array_ref1 = [
+$array_ref1 = [
   {name =>'bob', age => 9},
   {name =>'alice', age => 11},
   {name =>'tom', age => 13}
@@ -82,51 +82,51 @@ $ array_ref1 = [
 <h4> Sample program to find the median of the age column </h4>
 Data access has become a little more difficult due to the complexity of the referenced data,
 The method of checking is the same as before.
-* $ Array_ref2 is also added to include even patterns.
+* $Array_ref2 is also added to include even patterns.
 
 <pre>
 use strict;
 use warnings;
 use Data :: Dumper;
 
-my $ array_ref1 = [
+my $array_ref1 = [
   {name =>'bob', age => 9},
   {name =>'alice', age => 11},
   {name =>'tom', age => 13}
 ];;
 
-my $ array_ref2 = [
+my $array_ref2 = [
   {name =>'bob', age => 9},
   {name =>'alice', age => 11},
   {name =>'tom', age => 13},
   {name =>'carol', age => 15}
 ];;
 
-my $ median = 0;
+my $median = 0;
 
 sub get_median {
-    my ($ array_ref) = @_;
-    my $ array_cnt = @ $ array_ref;
-    my $ median_pos = int ($ array_cnt / 2);
-    my $ ret_median = 0;
+    my ($array_ref) = @_;
+    my $array_cnt = @$array_ref;
+    my $median_pos = int ($array_cnt / 2);
+    my $ret_median = 0;
 
-    if ($ array_cnt% 2 == 1) {
-$ ret_median = $ array_ref-> [$ median_pos]-> {'age'};
+    if ($array_cnt%2 == 1) {
+$ret_median = $array_ref-> [$median_pos]-> {'age'};
     } else {
-        my $ median_pos2 = $ median_pos ―― 1;
-        my $ value1 = $ array_ref-> [$ median_pos]-> {'age'};
-        my $ value2 = $ array_ref-> [$ median_pos2]-> {'age'};
+        my $median_pos2 = $median_pos ―― 1;
+        my $value1 = $array_ref-> [$median_pos]-> {'age'};
+        my $value2 = $array_ref-> [$median_pos2]-> {'age'};
        
-        $ ret_median = ($ value1 + $ value2) / 2;
+        $ret_median = ($value1 + $value2) / 2;
     }
-    return $ ret_median;
+    return $ret_median;
 }
 
-$ median = get_median (\ @ $ array_ref1);
-print "The median of array_ref1 is:". "$ median". "\ n";
+$median = get_median (\ @$array_ref1);
+print "The median of array_ref1 is:". "$median". "\ n";
 
-$ median = get_median (\ @ $ array_ref2);
-print "The median of array_ref2 is:". "$ median". "\ n";
+$median = get_median (\ @$array_ref2);
+print "The median of array_ref2 is:". "$median". "\ n";
 </pre>
 
 Execution result

@@ -96,10 +96,10 @@ Use the select statement, GROUP BY clause, and aggregate function to find monthl
 Since sales_datetime is a datetime type column, use the date_format function to convert it to'YYYY-MM'format and perform aggregation by group by.
 <pre>
 MariaDB [kimotosystem]> select
-    -> date_format (saled_at,'% Y-% m') as saled_at, sum (price * quantity) as price
+    -> date_format (saled_at,'%Y-%m') as saled_at, sum (price * quantity) as price
     -> from
     -> kimotosystem.sale
-    -> group by date_format (saled_at,'% Y-% m');
+    -> group by date_format (saled_at,'%Y-%m');
 + ---------- + ------- +
 | saled_at | price |
 + ---------- + ------- +

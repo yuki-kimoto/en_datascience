@@ -23,30 +23,30 @@ sub get_stddev {
 }
 
 sub get_disp {
-  my ($ array_ref) = @_;
-  my $ mean = get_avg ($ array_ref);
-  my $ count = @ $ array_ref;
-  my $ sum = 0;
+  my ($array_ref) = @_;
+  my $mean = get_avg ($array_ref);
+  my $count = @$array_ref;
+  my $sum = 0;
   
-  for my $ num (@ $ array_ref) {
-      $ sum + = (($ num-$ mean) ** 2);
+  for my $num (@$array_ref) {
+      $sum + = (($num-$mean) ** 2);
   }
-  return $ sum / $ count;
+  return $sum / $count;
 }
 
 sub get_avg {
-  my ($ array_ref) = @_;
-  my $ count = @ $ array_ref;
-  my $ sum = 0;
-  for my $ num (@ $ array_ref) {
-      $ sum + = $ num;
+  my ($array_ref) = @_;
+  my $count = @$array_ref;
+  my $sum = 0;
+  for my $num (@$array_ref) {
+      $sum + = $num;
   }
-  return $ sum / $ count;
+  return $sum / $count;
 }
 
 my @array = (10, 50, 60, 65, 70, 90);
-my $ stddev = get_stddev (\ @ array);
-print "Standard deviation is". $ Stddev. ". \ N";
+my $stddev = get_stddev (\ @array);
+print "Standard deviation is". $Stddev. ". \ N";
 </pre>
 
 Execution result

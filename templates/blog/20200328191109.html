@@ -20,15 +20,15 @@ use warnings;
 
 my @array = (1, 8, 3, 5, 7);
 
-my $ max = 0;
+my $max = 0;
 
-for my $ num (@array) {
-  if ($ max <$ num) {
-    $ max = $ num;
+for my $num (@array) {
+  if ($max <$num) {
+    $max = $num;
   }
 }
 
-print "$ max \ n";
+print "$max\n";
 </pre>
 
 Execution result
@@ -56,7 +56,7 @@ Consider the following data.
 
 It is as follows when expressed by the reference of the array and the hash.
 <pre>
-$ array_ref = [
+$array_ref = [
   {name =>'bob', age => 9},
   {name =>'tom', age => 14},
   {name =>'alice', age => 11}
@@ -71,21 +71,21 @@ The method of checking is the same as before.
 use strict;
 use warnings;
 
-my $ array_ref = [
+my $array_ref = [
   {name =>'bob', age => 9},
   {name =>'tom', age => 14},
   {name =>'alice', age => 11}
 ];;
 
-my $ max = 0;
+my $max = 0;
 
-for my $ info (@ {$ array_ref}) {
-  if ($ max <$ info-> {'age'}) {
-    $ max = $ info-> {'age'};
+for my $info (@{$array_ref}) {
+  if ($max <$info-> {'age'}) {
+    $max = $info-> {'age'};
   }
 }
 
-print "$ max \ n";
+print "$max\n";
 </pre>
 
 Execution result

@@ -17,18 +17,18 @@ use warnings;
 use Time :: Piece;
 
 # Date object as of July 16, 2019
-my $ day1_tp = Time :: Piece-> strptime ('2019-7-16','% Y-% m-% d');
+my $day1_tp = Time :: Piece-> strptime ('2019-7-16','%Y-%m-%d');
 
 # Date object as of December 31, 2019
-my $ day2_tp = Time :: Piece-> strptime ('2019-12-31','% Y-% m-% d');
+my $day2_tp = Time :: Piece-> strptime ('2019-12-31','%Y-%m-%d');
 
 # Find the difference. Returns a Time :: Seconds object that stores the difference information.
-my $ seconds = $ day2_tp-$ day1_tp;
+my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $ days = $ seconds-> days + 1;
+my $days = $seconds-> days + 1;
 
-print "$ days \ n";
+print "$days\n";
 </pre>
 
 Output result.
@@ -62,18 +62,18 @@ use warnings;
 use Time :: Piece;
 
 #January 1, 2019 Date Object
-my $ day1_tp = Time :: Piece-> strptime ('2019-1-1','% Y-% m-% d');
+my $day1_tp = Time :: Piece-> strptime ('2019-1-1','%Y-%m-%d');
 
 # Date object as of December 31, 2019
-my $ day2_tp = Time :: Piece-> strptime ('2019-12-31','% Y-% m-% d');
+my $day2_tp = Time :: Piece-> strptime ('2019-12-31','%Y-%m-%d');
 
 # Find the difference. Returns a Time :: Seconds object that stores the difference information.
-my $ seconds = $ day2_tp-$ day1_tp;
+my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $ days = $ seconds-> days + 1;
+my $days = $seconds-> days + 1;
 
-print "$ days \ n";
+print "$days\n";
 </pre>
 
 Output result.
@@ -95,18 +95,18 @@ use warnings;
 use Time :: Piece;
 
 # Date object as of January 1, 2020
-my $ day1_tp = Time :: Piece-> strptime ('2020-1-1','% Y-% m-% d');
+my $day1_tp = Time :: Piece-> strptime ('2020-1-1','%Y-%m-%d');
 
 # Date object as of December 31, 2020
-my $ day2_tp = Time :: Piece-> strptime ('2020-12-31','% Y-% m-% d');
+my $day2_tp = Time :: Piece-> strptime ('2020-12-31','%Y-%m-%d');
 
 # Find the difference. Returns a Time :: Seconds object that stores the difference information.
-my $ seconds = $ day2_tp-$ day1_tp;
+my $seconds = $day2_tp-$day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $ days = $ seconds-> days + 1;
+my $days = $seconds-> days + 1;
 
-print "$ days \ n";
+print "$days\n";
 </pre>
 
 Output result.
@@ -130,24 +130,24 @@ use warnings;
 use Time :: Piece;
 
 # Year
-my $ year = 2020;
+my $year = 2020;
 
 # Month
-my $ mon = 2;
+my $mon = 2;
 
 #Next month
-my $ mon_next = $ mon + 1;
+my $mon_next = $mon + 1;
 
 #Time :: Piece object on the first day of the next month
-my $ next_mon_tp = Time :: Piece-> strptime ("$ year- $ mon_next-1",'% Y-% m-% d');
+my $next_mon_tp = Time :: Piece-> strptime ("$year- $mon_next-1",'%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
-my $ this_mon_last_tp = $ next_mon_tp --1;
+my $this_mon_last_tp = $next_mon_tp --1;
 
 # Get the last day. This is the same value as the number of months.
-my $ this_mon_days_count = $ this_mon_last_tp-> mday;
+my $this_mon_days_count = $this_mon_last_tp-> mday;
 
-print "$ this_mon_days_count \ n";
+print "$this_mon_days_count\n";
 </pre>
 
 Output result.
@@ -177,48 +177,48 @@ use warnings;
 use Time :: Piece;
 
 # rent
-my $ yatin = 79_000;
+my $yatin = 79_000;
 
 # Year
-my $ year = 2020;
+my $year = 2020;
 
 # Month
-my $ mon = 6;
+my $mon = 6;
 
 # start date
-my $ start_mday = 18;
+my $start_mday = 18;
 
 #Next month
-my $ mon_next = $ mon + 1;
+my $mon_next = $mon + 1;
 
 #Time :: Piece object on the first day of the next month
-my $ next_mon_tp = Time :: Piece-> strptime ("$ year- $ mon_next-1",'% Y-% m-% d');
+my $next_mon_tp = Time :: Piece-> strptime ("$year- $mon_next-1",'%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
-my $ this_mon_last_tp = $ next_mon_tp --1;
+my $this_mon_last_tp = $next_mon_tp --1;
 
 # Get the last day. This is the same value as the number of months.
-my $ this_mon_days_count = $ this_mon_last_tp-> mday;
+my $this_mon_days_count = $this_mon_last_tp-> mday;
 
 # Date object on June 19, 2020
-my $ day1_tp = Time :: Piece-> strptime ("2020-6- $ start_mday",'% Y-% m-% d');
+my $day1_tp = Time :: Piece-> strptime ("2020-6- $start_mday",'%Y-%m-%d');
 
 # Date object as of December 31, 2020
-my $ day2_tp = Time :: Piece-> strptime ("2020-6- $ this_mon_days_count",'% Y-% m-% d');
+my $day2_tp = Time :: Piece-> strptime ("2020-6- $this_mon_days_count",'%Y-%m-%d');
 
 # Find the difference. Returns a Time :: Seconds object that stores the difference information.
-my $ seconds = $ day2_tp-$ day1_tp;
+my $seconds = $day2_tp-$day1_tp;
 
 #Days
-my $ days_count = $ seconds-> days + 1;
+my $days_count = $seconds-> days + 1;
 
 #Daily rent
-my $ hiwari_yatin = $ yatin * ($ days_count / $ this_mon_days_count);
+my $hiwari_yatin = $yatin * ($days_count / $this_mon_days_count);
 
 # Decimal point truncation
-my $ hiwari_yatin_cut = int $ hiwari_yatin;
+my $hiwari_yatin_cut = int $hiwari_yatin;
 
-print "$ hiwari_yatin_cut \ n";
+print "$hiwari_yatin_cut\n";
 </pre>
 
 Output result.

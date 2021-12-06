@@ -8,7 +8,7 @@ Create a bar graph using gnuplot and save it as an image file. The goal is to cr
 You can easily install it on your Mac using Homebrew.
 
 <pre>
-$ brew install gnuplot
+$brew install gnuplot
 </pre>
 
 <h3> Create a bar graph </h3>
@@ -28,7 +28,7 @@ Start gnuplot and display the graph.
 If sample-box.dat is not in the current directory, specify the file path.
 
 <pre>
-$ gnuplot
+$gnuplot
 
 G N U P L O T
 Version 5.4 patchlevel 0 last modified 2020-07-13
@@ -89,7 +89,7 @@ plot [] [0:]'sample-box.dat' using 1: 3: xtic (2) with boxes
 
 You can execute the commands in the file all at once by executing the following.
 <pre>
-$ gnuplot png_plot-boxes.txt
+$gnuplot png_plot-boxes.txt
 </pre>
 
 You can get the same result by starting gnuplot and using the load command.
