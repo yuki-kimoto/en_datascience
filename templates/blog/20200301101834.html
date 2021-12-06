@@ -14,7 +14,7 @@ To round up the amount after the decimal point, add 1 after using the <a href="h
 use strict;
 use warnings;
 
-#Amount (886.027397260274)
+# Amount (886.027397260274)
 my $price = 9800 * (33/365);
 
 # Round up the amount after the decimal point (887)
@@ -38,11 +38,11 @@ Using the ternary operator, if the price is larger than 0, the above processing 
 use strict;
 use warnings;
 
-#Amount (886.027397260274)
+# Amount (886.027397260274)
 my $price = -9800 * (33/365);
 
 # Round up the amount after the decimal point (-887)
-my $price_cut = $price> 0? int($price) + 1: int($price) ―― 1;
+my $price_cut = $price > 0 ? int($price) + 1 : int($price) - 1;
 
 # Output result
 print "$price_cut\n";
