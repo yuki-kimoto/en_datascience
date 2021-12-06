@@ -12,11 +12,11 @@ MariaDB [none]> create database kimotosystem;
 MariaDB [kimotosystem]> use kimotosystem;
 
 MariaDB [kimotosystem]> show tables;
-+ ----------------- +
++-----------------+
 | Tables_in_kimotosystem |
-+ ----------------- +
-| book |
-+ ----------------- +
++-----------------+
+| book            |
++-----------------+
 1 row in set (0.01 sec)
 </pre>
 
@@ -25,56 +25,56 @@ MariaDB [kimotosystem]> show tables;
 <a href="https://en.mariadb.perlzemi.com/blog/20200218150054.html"> Create a table using the create table statement</a>. The table name is book. ID, title and price data.
 
 <pre>
-MariaDB [kimotosystem]>
-MariaDB [kimotosystem]>
-MariaDB [kimotosystem]> create table kimotosystem.book (id int AUTO_INCREMENT PRIMARY KEY, name varchar (10), price int);
+MariaDB [kimotosystem]> 
+MariaDB [kimotosystem]> 
+MariaDB [kimotosystem]> create table kimotosystem.book(id int AUTO_INCREMENT PRIMARY KEY,name varchar(10), price int);
 Query OK, 0 rows affected (0.01 sec)
 
 MariaDB [itodb]> desc book;
-+ ------- + ------------- + ------ + ------- + --------- + ---- ------------+
-Field | Type | Null | Key | Default | Extra |
-+ ------- + ------------- + ------ + ------- + --------- + ---- ------------+
-id | int(11) | NO | PRI | NULL | auto_increment |
-| name | varchar (10) | YES | | NULL | |
-| price | int(11) | YES | | NULL | |
-+ ------- + ------------- + ------ + ------- + --------- + ---- ------------+
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(10) | YES  |     | NULL    |                |
+| price | int(11)     | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
 3 rows in set (0.00 sec)
 </pre>
 
-<h3> Insert data </​​h3>
+<h3> Insert data </h3>
 
 Insert book data using the SQL insert statement.
 
 <pre>
-MariaDB [kimotosystem]> insert into kimotosystem.book (name, price) values ​​('book A', 800), ('book B', 1000), ('book C', 1500), ('book D', 2500 ), ('book E', 2800), ('book F', 3500), ('book G', 4000);
+MariaDB [kimotosystem]> insert into kimotosystem.book (name,price) values ('book A',800),('book B', 1000),('book C', 1500),('book D', 2500),('book E',2800),('book F',3500),('book G',4000);
 Query OK, 7 rows affected (0.01 sec)
-Records: 7 Duplicates: 0 Warnings: 0
+Records: 7  Duplicates: 0  Warnings: 0
 
 MariaDB [kimotosystem]> select * from kimotosystem.book;
-+ ---- + -------- + ------- +
-| id | name | price |
-+ ---- + -------- + ------- +
-| 1 | book A | 800 |
-| 2 | book B | 1000 |
-| 3 | book C | 1500 |
-| 4 | book D | 2500 |
-| 5 | book E | 2800 |
-| 6 | book F | 3500 |
-| 7 | book G | 4000 |
-+ ---- + -------- + ------- +
++----+--------+-------+
+| id | name   | price |
++----+--------+-------+
+|  1 | book A |   800 |
+|  2 | book B |  1000 |
+|  3 | book C |  1500 |
+|  4 | book D |  2500 |
+|  5 | book E |  2800 |
+|  6 | book F |  3500 |
+|  7 | book G |  4000 |
++----+--------+-------+
 7 rows in set (0.01 sec)
 </pre>
 
-<h3> Find the maximum, minimum, and average values ​​with SQL </h3>
+<h3> Find the maximum, minimum, and average values with SQL </h3>
 
 Use the select statement and set operation to find the maximum, minimum, and average values.
 
 <pre>
-MariaDB [kimotosystem]> select max (price), min (price), avg (price) from kimotosystem.book;
-+ ------------ + ------------ + ------------ +
-| max (price) | min (price) | avg (price) |
-+ ------------ + ------------ + ------------ +
-4000 | 800 | 2300.0000 |
-+ ------------ + ------------ + ------------ +
+MariaDB [kimotosystem]> select max(price), min(price),avg(price) from kimotosystem.book;
++------------+------------+------------+
+| max(price) | min(price) | avg(price) |
++------------+------------+------------+
+|       4000 |        800 |  2300.0000 |
++------------+------------+------------+
 1 row in set (0.00 sec)
 </pre>

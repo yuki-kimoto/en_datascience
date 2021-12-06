@@ -25,8 +25,8 @@ my $day2_tp = Time::Piece->strptime('2019-12-31','%Y-%m-%d');
 # Find the difference. Returns a Time::Seconds object that stores the difference information.
 my $seconds = $day2_tp-$day1_tp;
 
-#days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds->days+ 1;
+# days gives the difference between dates, so adding 1 gives the correct number of days.
+my $days = $seconds->days + 1;
 
 print "$days\n";
 </pre>
@@ -68,10 +68,10 @@ my $day1_tp = Time::Piece->strptime('2019-1-1','%Y-%m-%d');
 my $day2_tp = Time::Piece->strptime('2019-12-31','%Y-%m-%d');
 
 # Find the difference. Returns a Time::Seconds object that stores the difference information.
-my $seconds = $day2_tp-$day1_tp;
+my $seconds = $day2_tp - $day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds->days+ 1;
+my $days = $seconds->days + 1;
 
 print "$days\n";
 </pre>
@@ -101,10 +101,10 @@ my $day1_tp = Time::Piece->strptime('2020-1-1','%Y-%m-%d');
 my $day2_tp = Time::Piece->strptime('2020-12-31','%Y-%m-%d');
 
 # Find the difference. Returns a Time::Seconds object that stores the difference information.
-my $seconds = $day2_tp-$day1_tp;
+my $seconds = $day2_tp - $day1_tp;
 
 #days gives the difference between dates, so adding 1 gives the correct number of days.
-my $days = $seconds->days+ 1;
+my $days = $seconds->days + 1;
 
 print "$days\n";
 </pre>
@@ -135,14 +135,14 @@ my $year = 2020;
 # Month
 my $mon = 2;
 
-#Next month
+# Next month
 my $mon_next = $mon + 1;
 
-#Time::Piece object on the first day of the next month
-my $next_mon_tp = Time::Piece->strptime("$year- $mon_next-1",'%Y-%m-%d');
+# Time::Piece object on the first day of the next month
+my $next_mon_tp = Time::Piece->strptime("$year-$mon_next-1", '%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
-my $this_mon_last_tp = $next_mon_tp --1;
+my $this_mon_last_tp = $next_mon_tp - 1;
 
 # Get the last day. This is the same value as the number of months.
 my $this_mon_days_count = $this_mon_last_tp->mday;
@@ -188,31 +188,31 @@ my $mon = 6;
 # start date
 my $start_mday = 18;
 
-#Next month
+# Next month
 my $mon_next = $mon + 1;
 
-#Time::Piece object on the first day of the next month
-my $next_mon_tp = Time::Piece->strptime("$year- $mon_next-1",'%Y-%m-%d');
+# Time::Piece object on the first day of the next month
+my $next_mon_tp = Time::Piece->strptime("$year-$mon_next-1", '%Y-%m-%d');
 
 # Subtract 1 second to get information on the last day of the previous month
-my $this_mon_last_tp = $next_mon_tp --1;
+my $this_mon_last_tp = $next_mon_tp - 1;
 
 # Get the last day. This is the same value as the number of months.
 my $this_mon_days_count = $this_mon_last_tp->mday;
 
 # Date object on June 19, 2020
-my $day1_tp = Time::Piece->strptime("2020-6- $start_mday",'%Y-%m-%d');
+my $day1_tp = Time::Piece->strptime("2020-6-$start_mday", '%Y-%m-%d');
 
 # Date object as of December 31, 2020
-my $day2_tp = Time::Piece->strptime("2020-6- $this_mon_days_count",'%Y-%m-%d');
+my $day2_tp = Time::Piece->strptime("2020-6-$this_mon_days_count", '%Y-%m-%d');
 
 # Find the difference. Returns a Time::Seconds object that stores the difference information.
-my $seconds = $day2_tp-$day1_tp;
+my $seconds = $day2_tp - $day1_tp;
 
-#Days
-my $days_count = $seconds->days+ 1;
+# Days
+my $days_count = $seconds->days + 1;
 
-#Daily rent
+# Daily rent
 my $hiwari_yatin = $yatin * ($days_count / $this_mon_days_count);
 
 # Decimal point truncation

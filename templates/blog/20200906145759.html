@@ -19,17 +19,17 @@ use strict;
 use warnings;
 
 sub get_stddev {
-  return sqrt(get_disp (@_));
+  return sqrt(get_disp(@_));
 }
 
 sub get_disp {
   my ($array_ref) = @_;
-  my $mean = get_avg ($array_ref);
+  my $mean = get_avg($array_ref);
   my $count = @$array_ref;
   my $sum = 0;
   
   for my $num (@$array_ref) {
-      $sum + = (($num-$mean) ** 2);
+      $sum += (($num - $mean) ** 2);
   }
   return $sum / $count;
 }
@@ -39,14 +39,14 @@ sub get_avg {
   my $count = @$array_ref;
   my $sum = 0;
   for my $num (@$array_ref) {
-      $sum + = $num;
+      $sum += $num;
   }
   return $sum / $count;
 }
 
 my @array = (10, 50, 60, 65, 70, 90);
-my $stddev = get_stddev (\ @array);
-print "Standard deviation is". $Stddev. ". \ N";
+my $stddev = get_stddev(\@array);
+print "Standard deviation is " . $stddev . "\n";
 </pre>
 
 Execution result

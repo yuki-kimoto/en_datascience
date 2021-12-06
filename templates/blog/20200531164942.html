@@ -20,12 +20,12 @@ If you don't know the range of numbers to compare, you need to devise a comparis
 use strict;
 use warnings;
 
-my @array = (8, 1, 3, 5, 7);
+my @array = (8, 1, 3, 5, 7); 
 
 my $min = 99;
 
 for my $num (@array) {
-  if ($min> $num) {
+  if ($min > $num) {
     $min = $num;
   }
 }
@@ -74,15 +74,15 @@ use strict;
 use warnings;
 
 my $array_ref = [
-  {name =>'bob', age => 9},
-  {name =>'tom', age => 14},
-  {name =>'alice', age => 11}
-];;
+  {name => 'bob', age => 9},
+  {name => 'tom', age => 14},
+  {name => 'alice',age => 11}
+];
 
 my $min = 99;
 
 for my $info (@{$array_ref}) {
-  if ($min> $info->{'age'}) {
+  if ($min > $info->{'age'}) {
     $min = $info->{'age'};
   }
 }

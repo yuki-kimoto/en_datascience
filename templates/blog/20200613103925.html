@@ -21,8 +21,8 @@ If the number of elements is odd, the median value is the value in the center of
 use strict;
 use warnings;
 
-my @array1 = (1, 4, 5, 7, 8);
-my @array2 = (1, 4, 6, 8, 9, 12);
+my @array1 = (1, 4, 5, 7, 8); 
+my @array2 = (1, 4, 6, 8, 9, 12); 
 my $median = 0;
 
 sub get_median {
@@ -31,26 +31,27 @@ sub get_median {
     my $ret_median = 0;
 
     my $median_pos = int($array_cnt / 2);
-    if ($array_cnt%2 == 1) {
-        $ret_median = @$array_ref [$median_pos];
+    if ( $array_cnt % 2 == 1) {
+        $ret_median = @$array_ref[$median_pos];
     } else {
-        my $median_pos2 = $median_pos ―― 1;
-        $ret_median = (@$array_ref [$median_pos] + @$array_ref [$median_pos2]) / 2;
+        my $median_pos2 = $median_pos - 1;
+        $ret_median = (@$array_ref[$median_pos] + @$array_ref[$median_pos2]) / 2;
     }
-return $ret_median;
+	return $ret_median;
 }
 
-$median = get_median (\ @array1);
-print "The median of array1 is:". "$median". "\ n";
+$median = get_median(\@array1);
+print "The median of array1 is" . "$median" . "\n";
 
-$median = get_median (\ @array2);
-print "The median of array2 is:". "$median". "\ n";
+$median = get_median(\@array2);
+print "The median of array2 is" . "$median" . "\n";
 </pre>
 
 Execution result
+
 <pre>
-The median of array1 is: 5
-The median of array2 is: 7
+The median of array1 is 5
+The median of array2 is 7
 </pre>
 
 You can get the central element of an array of elements without having to compare values ​​like maximum, minimum, and so on.
@@ -90,17 +91,17 @@ use warnings;
 use Data::Dumper;
 
 my $array_ref1 = [
-  {name =>'bob', age => 9},
-  {name =>'alice', age => 11},
-  {name =>'tom', age => 13}
-];;
+  {name => 'bob', age => 9},
+  {name => 'alice',age => 11},
+  {name => 'tom', age => 13}
+];
 
 my $array_ref2 = [
-  {name =>'bob', age => 9},
-  {name =>'alice', age => 11},
-  {name =>'tom', age => 13},
-  {name =>'carol', age => 15}
-];;
+  {name => 'bob', age => 9},
+  {name => 'alice',age => 11},
+  {name => 'tom', age => 13},
+  {name => 'carol', age => 15}
+];
 
 my $median = 0;
 
@@ -110,10 +111,10 @@ sub get_median {
     my $median_pos = int($array_cnt / 2);
     my $ret_median = 0;
 
-    if ($array_cnt%2 == 1) {
-$ret_median = $array_ref->[$median_pos]->{'age'};
+    if ( $array_cnt % 2 == 1) {
+	    $ret_median = $array_ref->[$median_pos]->{'age'};
     } else {
-        my $median_pos2 = $median_pos ―― 1;
+        my $median_pos2 = $median_pos - 1;
         my $value1 = $array_ref->[$median_pos]->{'age'};
         my $value2 = $array_ref->[$median_pos2]->{'age'};
        
@@ -122,17 +123,17 @@ $ret_median = $array_ref->[$median_pos]->{'age'};
     return $ret_median;
 }
 
-$median = get_median (\ @$array_ref1);
-print "The median of array_ref1 is:". "$median". "\ n";
+$median = get_median(\@$array_ref1);
+print "The median of array_ref1 is ". "$median". "\ n";
 
-$median = get_median (\ @$array_ref2);
+$median = get_median(\@$array_ref2);
 print "The median of array_ref2 is:". "$median". "\ n";
 </pre>
 
 Execution result
 <pre>
-The median of array_ref1 is: 11
-The median of array_ref2 is: 12
+The median of array_ref1 is 11
+The median of array_ref2 is 12
 </pre>
 
 The process is the same as before except that the reference is dealt with.

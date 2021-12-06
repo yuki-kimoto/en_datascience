@@ -18,12 +18,12 @@ You can find the maximum value by preparing a variable to store the maximum valu
 use strict;
 use warnings;
 
-my @array = (1, 8, 3, 5, 7);
+my @array = (1, 8, 3, 5, 7); 
 
 my $max = 0;
 
 for my $num (@array) {
-  if ($max <$num) {
+  if ($max < $num) {
     $max = $num;
   }
 }
@@ -72,15 +72,15 @@ use strict;
 use warnings;
 
 my $array_ref = [
-  {name =>'bob', age => 9},
-  {name =>'tom', age => 14},
-  {name =>'alice', age => 11}
-];;
+  {name => 'bob', age => 9},
+  {name => 'tom', age => 14},
+  {name => 'alice',age => 11}
+];
 
 my $max = 0;
 
 for my $info (@{$array_ref}) {
-  if ($max <$info->{'age'}) {
+  if ($max < $info->{'age'}) {
     $max = $info->{'age'};
   }
 }

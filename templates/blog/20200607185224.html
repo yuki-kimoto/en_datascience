@@ -20,7 +20,7 @@ use strict;
 use warnings;
 
 my @array = (8, 1, 4, 5, 7);
-my $array_cnt = @array; #We are looking for the number of data.
+my $array_cnt = @array; # We are looking for the number of data.
 
 my $sum = 0;
 my $avg = 0;
@@ -73,18 +73,18 @@ use strict;
 use warnings;
 
 my $array_ref = [
-  {name =>'bob', age => 9},
-  {name =>'tom', age => 13},
-  {name =>'alice', age => 11}
-];;
+  {name => 'bob', age => 9},
+  {name => 'tom', age => 13},
+  {name => 'alice',age => 11}
+];
 
 my $array_cnt = 0;
 my $sum = 0;
 my $avg = 0;
 
 for my $info (@{$array_ref}) {
-    $sum + = $info->{'age'};
-    $array_cnt + = 1;
+    $sum += $info->{'age'};
+    $array_cnt += 1;
 }
 $avg = $sum / $array_cnt;
 
@@ -93,7 +93,7 @@ print "$avg\n";
 
 Execution result
 <pre>
-11 11
+11
 </pre>
 
 The process is the same as before except that the reference is dealt with.
