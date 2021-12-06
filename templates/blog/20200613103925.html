@@ -1,140 +1,140 @@
-<h2>中央値を求めてみよう</h2>
+<h2> Let's find the median </ h2>
 
-中央値を求める方法をPerlプログラムを用いて説明します。
+I will explain how to find the median using a Perl program.
 
-<h3>配列の中央値を求めてみよう</h3>
+<h3> Let's find the median of the array </ h3>
 
-以下のような配列を考えてみます。
+Consider the following array.
 
 <pre>
-my @array1 = (1, 4, 5, 7, 8);
-my @array2 = (1, 4, 6, 8, 9, 12);
-</pre>
+my @ array1 = (1, 4, 5, 7, 8);
+my @ array2 = (1, 4, 6, 8, 9, 12);
+</ pre>
 
-<h4>配列の中央値を求めるサンプルプログラム</h4>
+<h4> Sample program to find the median of an array </ h4>
 
-実際に配列から中央値を求めます。<a href="https://metacpan.org/pod/Statistics::Lite">Statistics::Liteモジュール</a>にmedian関数がありますが、この例では利用しません。
-中央値は要素数が奇数の場合は要素の中央にある値となり、偶数の場合は中央にある2つの値の平均を中央値として求めることができます。
-※コードの簡略化のため、ソート済みのデータを使用します。
+Actually find the median from the array. The <a href="https://metacpan.org/pod/Statistics :: Lite"> Statistics :: Lite module </a> has a median function, but we won't use it in this example.
+If the number of elements is odd, the median value is the value in the center of the element, and if the number of elements is even, the average of the two values ​​in the center can be calculated as the median value.
+* Sorted data is used to simplify the code.
 
 <pre>
 use strict;
 use warnings;
 
-my @array1 = (1, 4, 5, 7, 8); 
-my @array2 = (1, 4, 6, 8, 9, 12); 
-my $median = 0;
+my @ array1 = (1, 4, 5, 7, 8);
+my @ array2 = (1, 4, 6, 8, 9, 12);
+my $ median = 0;
 
 sub get_median {
-    my ($array_ref) = @_;
-    my $array_cnt = @$array_ref;
-    my $ret_median = 0;
+    my ($ array_ref) = @_;
+    my $ array_cnt = @ $ array_ref;
+    my $ ret_median = 0;
 
-    my $median_pos = int($array_cnt / 2);
-    if ( $array_cnt % 2 == 1) {
-        $ret_median = @$array_ref[$median_pos];
+    my $ median_pos = int ($ array_cnt / 2);
+    if ($ array_cnt% 2 == 1) {
+        $ ret_median = @ $ array_ref [$ median_pos];
     } else {
-        my $median_pos2 = $median_pos - 1;
-        $ret_median = (@$array_ref[$median_pos] + @$array_ref[$median_pos2]) / 2;
+        my $ median_pos2 = $ median_pos ―― 1;
+        $ ret_median = (@ $ array_ref [$ median_pos] + @ $ array_ref [$ median_pos2]) / 2;
     }
-	return $ret_median;
+return $ ret_median;
 }
 
-$median = get_median(\@array1);
-print "array1の中央値は:" . "$median" . "\n";
+$ median = get_median (\ @ array1);
+print "The median of array1 is:". "$ median". "\ n";
 
-$median = get_median(\@array2);
-print "array2の中央値は:" . "$median" . "\n";
-</pre>
+$ median = get_median (\ @ array2);
+print "The median of array2 is:". "$ median". "\ n";
+</ pre>
 
-実行結果
+Execution result
 <pre>
-array1の中央値は:5
-array2の中央値は:7
-</pre>
+The median of array1 is: 5
+The median of array2 is: 7
+</ pre>
 
-最大値、最小値などのように値の比較を行う必要がなく、要素の配列の中央の要素を取得できます。
+You can get the central element of an array of elements without having to compare values ​​like maximum, minimum, and so on.
 
 
-<h3>表形式のデータから、特定の列の中央値を求めてみよう。</h3>
+<h3> Let's find the median value of a specific column from the tabular data. </ h3>
 
-以下のデータを考えてみましょう。
-<table> 
+Consider the following data.
+<table>
   <thead>
-    <tr><th>name</th><th>age</th></tr>
+    <tr> <th> name </ th> <th> age </ th> </ tr>
   </thead>
   <tbody>
-    <tr><th>bob</th><th>9</th></tr>
-    <tr><th>alice</th><th>11</th></tr>
-    <tr><th>tom</th><th>13</th></tr>
-  </tbody>
-</table>
+    <tr> <th> bob </ th> <th> 9 </ th> </ tr>
+    <tr> <th> alice </ th> <th> 11 </ th> </ tr>
+    <tr> <th> tom </ th> <th> 13 </ th> </ tr>
+  </ tbody>
+</ table>
 
-配列,ハッシュのリファレンスで表すと以下のようになります。
+It is as follows when expressed by the reference of the array and the hash.
 <pre>
-$array_ref1 = [
-  {name => 'bob',  age => 9},
-  {name => 'alice',age => 11},
-  {name => 'tom',  age => 13}
-];
-</pre>
+$ array_ref1 = [
+  {name =>'bob', age => 9},
+  {name =>'alice', age => 11},
+  {name =>'tom', age => 13}
+];;
+</ pre>
 
-<h4>age列の中央値を求めるサンプルプログラム</h4>
-参照するデータが複雑になったためデータアクセスも少し難しくなりましたが、
-チェックする方法は先ほどと同じです。
-※偶数パターンも入れるため$array_ref2も追加しています。
+<h4> Sample program to find the median of the age column </ h4>
+Data access has become a little more difficult due to the complexity of the referenced data,
+The method of checking is the same as before.
+* $ Array_ref2 is also added to include even patterns.
 
 <pre>
 use strict;
 use warnings;
-use Data::Dumper;
+use Data :: Dumper;
 
-my $array_ref1 = [
-  {name => 'bob', age => 9},
-  {name => 'alice',age => 11},
-  {name => 'tom', age => 13}
-];
+my $ array_ref1 = [
+  {name =>'bob', age => 9},
+  {name =>'alice', age => 11},
+  {name =>'tom', age => 13}
+];;
 
-my $array_ref2 = [
-  {name => 'bob', age => 9},
-  {name => 'alice',age => 11},
-  {name => 'tom', age => 13},
-  {name => 'carol', age => 15}
-];
+my $ array_ref2 = [
+  {name =>'bob', age => 9},
+  {name =>'alice', age => 11},
+  {name =>'tom', age => 13},
+  {name =>'carol', age => 15}
+];;
 
-my $median = 0;
+my $ median = 0;
 
 sub get_median {
-    my ($array_ref) = @_;
-    my $array_cnt = @$array_ref;
-    my $median_pos = int($array_cnt / 2);
-    my $ret_median = 0;
+    my ($ array_ref) = @_;
+    my $ array_cnt = @ $ array_ref;
+    my $ median_pos = int ($ array_cnt / 2);
+    my $ ret_median = 0;
 
-    if ( $array_cnt % 2 == 1) {
-	    $ret_median = $array_ref->[$median_pos]->{'age'};
+    if ($ array_cnt% 2 == 1) {
+$ ret_median = $ array_ref-> [$ median_pos]-> {'age'};
     } else {
-        my $median_pos2 = $median_pos - 1;
-        my $value1 = $array_ref->[$median_pos]->{'age'};
-        my $value2 = $array_ref->[$median_pos2]->{'age'};
+        my $ median_pos2 = $ median_pos ―― 1;
+        my $ value1 = $ array_ref-> [$ median_pos]-> {'age'};
+        my $ value2 = $ array_ref-> [$ median_pos2]-> {'age'};
        
-        $ret_median = ($value1 + $value2) / 2;
+        $ ret_median = ($ value1 + $ value2) / 2;
     }
-    return $ret_median;
+    return $ ret_median;
 }
 
-$median = get_median(\@$array_ref1);
-print "array_ref1の中央値は:" . "$median" . "\n";
+$ median = get_median (\ @ $ array_ref1);
+print "The median of array_ref1 is:". "$ median". "\ n";
 
-$median = get_median(\@$array_ref2);
-print "array_ref2の中央値は:" . "$median" . "\n";
-</pre>
+$ median = get_median (\ @ $ array_ref2);
+print "The median of array_ref2 is:". "$ median". "\ n";
+</ pre>
 
-実行結果
+Execution result
 <pre>
-array_ref1の中央値は:11
-array_ref2の中央値は:12
-</pre>
+The median of array_ref1 is: 11
+The median of array_ref2 is: 12
+</ pre>
 
-リファレンスを扱った以外は先ほどと同じ処理になります。
+The process is the same as before except that the reference is dealt with.
 
-このプログラムは、コピー＆ペーストして、<a href="https://perlbanjo.com">PerlBanjo</a>で、すぐに試すことができます。
+You can copy and paste this program and try it immediately at <a href="https://perlbanjo.com"> PerlBanjo </a>.

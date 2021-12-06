@@ -1,41 +1,41 @@
-<h2>データサイエンスには専用のツールやライブラリが必要ですか?</h2>
+<h2> Do you need special tools or libraries for data science? </ H2>
 
-データサイエンスには、専門のツールや、ライブラリが必要と誤解されている方も多いようです。
+It seems that many people misunderstand that data science requires specialized tools and libraries.
 
-「データサイエンスにはPythonのnumpyが必要なんじゃないの?」
+"Isn't Python numpy necessary for data science?"
 
-Perlで学ぶビジネスデータ分析では、実例を紹介しながら、実際に、専用のツールやライブラリなしで、データサイエンスが可能なことを示します。
+Business data analysis learned in Perl demonstrates that data science is possible without the need for specialized tools or libraries, with examples.
 
-統計の専門家ではない普通のビジネスユーザーが、なるべく簡単にデータを扱えることを目標にします。
+The goal is to make the data as easy as possible for ordinary business users who are not statistical experts.
 
-<h3>データ分析にはプログラミングの基本的な文法を使う</h3>
+<h3> Use basic programming grammar for data analysis </ h3>
 
-データサイエンスとして、合計、累積、平均、最大、最小、確率など求めるには、プログラミング言語の基本的な文法で可能です。
+As a data science, it is possible to calculate total, cumulative, average, maximum, minimum, probability, etc. with the basic grammar of a programming language.
 
-複数フィールドの並び替え、NaN値の除去、回帰分析など、統計処理でよく使われることも、プログラミングの基本的な文法で可能です。
+It is also possible with the basic programming grammar that is often used in statistical processing such as sorting multiple fields, removing NaN values, and regression analysis.
 
-ピボットテーブルによる集計も、Perlの多次元データ構造を使えば、表現可能です。
+Pivot table aggregation can also be represented using Perl's multidimensional data structures.
 
-<h3>データ分析はSQLを使う</h3>
+<h3> Data analysis uses SQL </ h3>
 
-簡単なデータ分析には、SQLを使うという方法も主流です。
+SQL is also the mainstream method for simple data analysis.
 
-WebやPOSから入力されたデータは、データベースに格納されています。まず必要なデータをSQLで取得しますが、このときに、統計データを作成してしまうということもよくやるテクニックです。
+Data entered from the Web or POS is stored in the database. First, get the necessary data with SQL, but at this time, creating statistical data is also a common technique.
 
-SQLをPerlから実行して統計データを作成するということも解説します。
+It also explains how to run SQL from Perl to create statistical data.
 
-データベースを扱うデータ分析基盤のためのサーバー構築は、実は、Webシステム開発環境を構築する手順と同じです。以下を参考にしてください。
+Building a server for a data analysis platform that handles databases is actually the same as building a Web system development environment. Please refer to the following.
 
 <ul>
-  <li><a href="https://en.ubuntu.perlzemi.com/">Ubuntu+PerlでWebシステム開発 環境構築</a></li>
-</ul>
+  <li> <a href="https://en.ubuntu.perlzemi.com/"> Building a Web system development environment with Ubuntu + Perl </a> </ li>
+</ ul>
 
-<h3>データ可視化はJavaScriptのグラフライブラリ</h3>
+<h3> Data visualization is a JavaScript graph library </ h3>
 
-唯一ライブラリが必要だとすれば、データを可視化する分野でしょう。この分野のライブラリとして、Webのフロントエンドで動作し、インタラクティブで、グラフライブラリも豊富なJavaScriptを使うことが、ひとつの選択肢です。
+If you only need a library, it's a field of data visualization. As a library in this area, one option is to use JavaScript, which runs on the front end of the web, is interactive, and has a rich graph library.
 
-サーバー側で行われたデータ分析の結果を、クライアント側に渡して、JavaScriptのライブラリを使って、グラフを描画する方法を解説します。
+I will explain how to pass the result of data analysis performed on the server side to the client side and draw a graph using the JavaScript library.
 
-サーバー側からクライアント側でデータを渡す方法も<a href="https://en.mojolicious.perlzemi.com/">Mojolicious</a>を使って解説します。
+We will also explain how to pass data from the server side to the client side using <a href="https://en.mojolicious.perlzemi.com/"> Mojolicious </a>.
 
-JavaScriptを使ってcanbasに描画した画像をpngに変換して、画面に表示し書籍用のPDFに変換する方法も将来的に解説したいと思います。
+I would like to explain in the future how to convert an image drawn on canbas using JavaScript to png, display it on the screen, and convert it to PDF for books.
